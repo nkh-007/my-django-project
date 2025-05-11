@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Student</title>
+</head>
+<body>
+    {% if messages %}
+    {% for message in messages %}
+        <p class="alert alert-{{ message.tags }}">{{ message }}</p>
+    {% endfor %}
+    {% endif %}
+
+    <h1>Edit Student : {{Stud.stud_name}}  {{Stud.roll_number}}</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button type="submit">Edit Student</button>
+    </form>
+    <br>
+    <a href="{% url 'student_list' %}">View Student List</a>
+</body>
+</html>

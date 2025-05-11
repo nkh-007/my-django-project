@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student List</title>
+</head>
+<body>
+    {% if messages %}
+    {% for message in messages %}
+        <p class="alert alert-{{ message.tags }}">{{ message }}</p>
+    {% endfor %}
+    {% endif %}
+
+
+
+    <h1>Student List</h1>
+    <a href="{% url 'add_student' %}">Add new student</a>  <!-- Fixed syntax -->
+    <ul>
+        {% for student in studs %}  <!-- Fixed variable name -->
+            <li>{{ student.stud_name }} {{ student.roll_number }}</li>
+            <a href="{% url 'delete_student' student.roll_number %}"> DELETE </a>
+        {% endfor %}
+    </ul>
+    <br>
+</body>
+</html>

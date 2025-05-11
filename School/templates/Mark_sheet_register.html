@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Records</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: left;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid black;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Student Records</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Student Name</th>
+                <th>Father's Name</th>
+                <th>Email</th>
+                <th>Roll Number</th>
+                <th>Math</th>
+                <th>English</th>
+                <th>History</th>
+                <th>Science</th>
+                <th>Hindi</th>
+                <th>Total</th>
+                <th>Percentage</th>
+                <th>Result</th>
+                <th>Division</th>
+                <th>Date Joined</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in studs %}
+            <tr>
+                <td>{{ student.id }}</td>
+                <td>{{ student.stud_name }}</td>
+                <td>{{ student.father_name }}</td>
+                <td>{{ student.email }}</td>
+                <td>{{ student.roll_number }}</td>
+                <td>{{ student.math }}</td>
+                <td>{{ student.english }}</td>
+                <td>{{ student.history }}</td>
+                <td>{{ student.science }}</td>
+                <td>{{ student.hindi }}</td>
+                <td>{{ student.total }}</td>
+                <td>{{ student.percentage }}</td>
+                <td>{{ student.result }}</td>
+                <td>{{ student.division }}</td>
+                <td>{{ student.date_joined }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
